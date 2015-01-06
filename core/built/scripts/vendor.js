@@ -115531,7 +115531,7 @@ html4.ATTRIBS = {
   'a::onfocus': 2,
   'a::shape': 0,
   'a::tabindex': 0,
-  'a::target': 10,
+  'a::target': 8, //从10修改为8, 不被sanitizer 过滤
   'a::type': 0,
   'area::accesskey': 0,
   'area::alt': 0,
