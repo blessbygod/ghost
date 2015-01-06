@@ -11,7 +11,9 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://www.lichenfan.com',
-        mail: {},
+        mail: {
+		from: '25018238@qq.com'
+	},
         // 配置MySQL 数据库
         database: {
             client: 'mysql',

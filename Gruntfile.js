@@ -688,9 +688,9 @@ var _              = require('lodash'),
                         sourceMap: true
                     },
                     files: {
-                        'core/built/public/jquery.min.js': 'core/built/public/jquery.js',
+                       // 'core/built/public/jquery.min.js': 'core/built/public/jquery.js',
                         'core/built/scripts/vendor.min.js': 'core/built/scripts/vendor.js',
-                        'core/built/scripts/ghost.min.js': 'core/built/scripts/ghost.js'
+                       // 'core/built/scripts/ghost.min.js': 'core/built/scripts/ghost.js'
                     }
                 },
                 release: {
@@ -698,9 +698,9 @@ var _              = require('lodash'),
                         sourceMap: false
                     },
                     files: {
-                        'core/built/public/jquery.min.js': 'core/built/public/jquery.js',
+                       // 'core/built/public/jquery.min.js': 'core/built/public/jquery.js',
                         'core/built/scripts/vendor.min.js': 'core/built/scripts/vendor.js',
-                        'core/built/scripts/ghost.min.js': 'core/built/scripts/ghost.js'
+                       // 'core/built/scripts/ghost.min.js': 'core/built/scripts/ghost.js'
                     }
                 }
             },
@@ -1123,7 +1123,7 @@ var _              = require('lodash'),
         //
         // It is otherwise the same as running `grunt`, but is only used when running Ghost in the `production` env.
         grunt.registerTask('prod', 'Build JS & templates for production',
-            ['concat:prod', 'copy:prod', 'emberBuildProd', 'uglify:prod', 'master-warn']);
+            ['concat:prod', 'copy:prod',/* 'emberBuildProd', */ 'uglify:prod', /*'master-warn' */]);
 
         // ### Default asset build
         // `grunt` - default grunt task
