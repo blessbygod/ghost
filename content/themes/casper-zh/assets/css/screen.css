@@ -17,7 +17,6 @@
     10. Media Queries (Tablet)
     11. Media Queries (Mobile)
     12. Animations
-    13. tagCloud
 
 */
 
@@ -1778,28 +1777,6 @@ body:not(.post-template) .post-title {
     }
 }
 
-/* =============================================
- *   my add and modified css
-   ============================================== */
- /* 1. tag-cloud */
-.tag-cloud{
-  position: fixed;
-  top: 420px;
-  left: 20px;
-}
-.tag-cloud a{
-  clear: left;
-  float: left;
-}
-.tag-cloud a .post-count{
-	margin-left: 10px;
-}
- /* 2. friend web site */
-.friend-web{
-  clear: both;
-  position: relative;
-  top: 10px;
-}
 
 /* ==========================================================================
    End of file. Animations should be the last thing here. Do not add stuff
