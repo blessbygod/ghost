@@ -11,8 +11,17 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://www.lichenfan.com',
-        mail: {
-		from: '25018238@qq.com'
+	     mail: {
+		from: '25018238@qq.com',
+		transport: 'SMTP',
+		options: {
+			service: 'Gmail',
+			 auth: {
+			 	user: 'blessbyfang@gmail.com',
+	      			pass: '122056aa8'
+			 }
+	      
+	     	}
 	},
         // 配置MySQL 数据库
         database: {
@@ -35,20 +44,20 @@ config = {
         },
 
         //Storage.Now,we can support `qiniu`,`upyun`, `aliyun oss`, `aliyun ace-storage` and `local-file-store`
-        storage: {
+        /*storage: {
             provider: 'local-file-store'
-        }
+        }*/
 
         // or
         // 参考文档： http://www.ghostchina.com/qiniu-cdn-for-ghost/
-        /*storage: {
+        storage: {
             provider: 'qiniu',
             bucketname: 'your-bucket-name',
             ACCESS_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             SECRET_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             root: '/image/',
             prefix: 'http://your-bucket-name.qiniudn.com'
-        }*/
+        }
 
         // or
         // 参考文档： http://www.ghostchina.com/upyun-cdn-for-ghost/ 
