@@ -140,7 +140,6 @@ posts = {
      */
     add: function add(object, options) {
         options = options || {};
-
         return canThis(options.context).add.post().then(function () {
             return utils.checkObject(object, docName).then(function (checkedPostData) {
                 if (options.include) {

@@ -4,10 +4,13 @@
     {{! Document Settings }}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 站长平台校验 -->
+    <meta name="baidu-site-verification" content="KwVK1kojRE" />
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
+    <meta name="keywords" content="ghost，nodejs，云加速，博客" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +19,15 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+     var hm = document.createElement("script");
+     hm.src = "//hm.baidu.com/hm.js?bf4c9adef74309cd159a6bb663e0677c";
+     var s = document.getElementsByTagName("script")[0]; 
+     s.parentNode.insertBefore(hm, s);
+     })();
+     </script>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -42,6 +54,5 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
 </body>
 </html>

@@ -38,26 +38,26 @@ config = {
 
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0', //127.0.0.1 监听本机，外部不能访问
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
         },
 
         //Storage.Now,we can support `qiniu`,`upyun`, `aliyun oss`, `aliyun ace-storage` and `local-file-store`
-        /*storage: {
+        storage: {
             provider: 'local-file-store'
-        }*/
+        }
 
         // or
         // 参考文档： http://www.ghostchina.com/qiniu-cdn-for-ghost/
-        storage: {
+        /*storage: {
             provider: 'qiniu',
             bucketname: 'your-bucket-name',
             ACCESS_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             SECRET_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             root: '/image/',
             prefix: 'http://your-bucket-name.qiniudn.com'
-        }
+        }*/
 
         // or
         // 参考文档： http://www.ghostchina.com/upyun-cdn-for-ghost/ 
@@ -93,7 +93,7 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blogs published URL.
-        url: 'http://localhost:2368',
+        url: 'http://0.0.0.0:2368',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
@@ -131,7 +131,7 @@ config = {
 */
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
         },
