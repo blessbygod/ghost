@@ -34,7 +34,7 @@
             "defaultValue": ""
         },
         "defaultLang": {
-            "defaultValue": "en_US",
+            "defaultValue": "zh_CN",
             "validations": {
                 "isNull": false
             }
@@ -67,6 +67,18 @@
         },
         "ghost_foot": {
             "defaultValue" : ""
+        },
+        "labs": {
+            "defaultValue": "{}"
+        },
+        "navigation": {
+            "defaultValue": "[{\"label\":\"首页\", \"url\":\"/\"}]"
+        },
+        "isPrivate": {
+            "defaultValue": "false"
+        },
+        "password": {
+            "defaultValue": ""
         }
     },
     "theme": {

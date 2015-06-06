@@ -10,7 +10,7 @@ var db = {
             featured: {type: 'bool', nullable: false, defaultTo: false, validations: {isIn: [[0, 1, false, true]]}},
             page: {type: 'bool', nullable: false, defaultTo: false, validations: {isIn: [[0, 1, false, true]]}},
             status: {type: 'string', maxlength: 150, nullable: false, defaultTo: 'draft'},
-            language: {type: 'string', maxlength: 6, nullable: false, defaultTo: 'en_US'},
+            language: {type: 'string', maxlength: 6, nullable: false, defaultTo: 'zh_CN'},
             meta_title: {type: 'string', maxlength: 150, nullable: true},
             meta_description: {type: 'string', maxlength: 200, nullable: true},
             author_id: {type: 'integer', nullable: false},
@@ -35,7 +35,7 @@ var db = {
             location: {type: 'text', maxlength: 65535, nullable: true},
             accessibility: {type: 'text', maxlength: 65535, nullable: true},
             status: {type: 'string', maxlength: 150, nullable: false, defaultTo: 'active'},
-            language: {type: 'string', maxlength: 6, nullable: false, defaultTo: 'en_US'},
+            language: {type: 'string', maxlength: 6, nullable: false, defaultTo: 'zh_CN'},
             meta_title: {type: 'string', maxlength: 150, nullable: true},
             meta_description: {type: 'string', maxlength: 200, nullable: true},
             last_login: {type: 'dateTime', nullable: true},
@@ -198,9 +198,15 @@ function isUser(jsonData) {
         jsonData.hasOwnProperty('status') && jsonData.hasOwnProperty('location');
 }
 
+function isNav(jsonData) {
+    return jsonData.hasOwnProperty('label') && jsonData.hasOwnProperty('url') &&
+        jsonData.hasOwnProperty('slug') && jsonData.hasOwnProperty('current');
+}
+
 module.exports.tables = db;
 module.exports.checks = {
     isPost: isPost,
     isTag: isTag,
-    isUser: isUser
+    isUser: isUser,
+    isNav: isNav
 };

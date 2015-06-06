@@ -189,7 +189,16 @@ errors = {
             return this.rejectError(new this.NoPermissionError(error));
         }
 
-        if (error.type) {
+        if (error.errorType) {
+            return this.rejectError(error);
+        }
+
+        // handle database errors
+        if (error.code && (error.errno || error.detail)) {
+            error.db_error_code = error.code;
+            error.errorType = 'DatabaseError';
+            error.code = 500;
+
             return this.rejectError(error);
         }
 
@@ -252,7 +261,7 @@ errors = {
                 // And then try to explain things to the user...
                 // Cheat and output the error using handlebars escapeExpression
                 return res.status(500).send(
-                    '<h1>Oops, seems there is an an error in the error template.</h1>' +
+                    '<h1>Oops, seems there is an error in the error template.</h1>' +
                     '<p>Encountered the error: </p>' +
                     '<pre>' + hbs.handlebars.Utils.escapeExpression(templateErr.message || templateErr) + '</pre>' +
                     '<br ><p>whilst trying to render an error page for the error: </p>' +
@@ -275,7 +284,7 @@ errors = {
     },
 
     error404: function (req, res, next) {
-        var message = res.isAdmin && req.user ? 'No Ghost Found' : 'Page Not Found';
+        var message = res.isAdmin && req.user ? 'No Ghost Found' : '页面未找到';
 
         // do not cache 404 error
         res.set({'Cache-Control': 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0'});
@@ -314,7 +323,7 @@ errors = {
 
                 errorContent.message = _.isString(errorItem) ? errorItem :
                     (_.isObject(errorItem) ? errorItem.message : 'Unknown Error');
-                errorContent.type = errorItem.type || 'InternalServerError';
+                errorContent.errorType = errorItem.errorType || 'InternalServerError';
                 returnErrors.push(errorContent);
             });
 

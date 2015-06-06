@@ -1,102 +1,130 @@
-# [Ghost](https://github.com/TryGhost/Ghost) [![Build Status](https://travis-ci.org/TryGhost/Ghost.svg?branch=master)](https://travis-ci.org/TryGhost/Ghost)
+<a href="https://github.com/TryGhost/Ghost"><img src="https://cloud.githubusercontent.com/assets/120485/6622822/c4c639fe-c8e7-11e4-9e64-5bec06c8b4c3.png" alt="Ghost" /></a>
 
-![Ghost Screenshot](https://cloud.githubusercontent.com/assets/120485/4828504/9e832764-5f80-11e4-8ac1-0332bcc67a35.png)
+![Ghost Screenshot](https://cloud.githubusercontent.com/assets/120485/6626466/6dae46b2-c8ff-11e4-8c7c-8dd63b215f7b.jpg)
 
-Ghost is a free, open, simple blogging platform that's available to anyone who wants to use it. Lovingly created and maintained by [John O'Nolan](http://twitter.com/JohnONolan) + [Hannah Wolfe](http://twitter.com/ErisDS) + an amazing group of [contributors](https://github.com/TryGhost/Ghost/contributors).
+![Ghost is a simple, powerful publishing platform that allows you to share your stories with the world.](https://cloud.githubusercontent.com/assets/120485/6626501/b2bb072c-c8ff-11e4-8e1a-2e78e68fd5c3.png)
 
-Visit the project's website at <http://ghost.org> &bull; docs on <http://support.ghost.org>.
+Ghost 目由非盈利性组织 **Ghost Foundation** 和一群优秀的独立[贡献者](https://github.com/TryGhost/Ghost/contributors)共同维护。我们正在尽最大努力让在线内容创作变得更好。
 
-## Getting Involved
-
-Want to report a bug, request a feature, contribute or translate Ghost? Check out our in-depth guide to [Contributing to Ghost](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md). We need all the help we can get! You can also join in with our [community](https://github.com/TryGhost/Ghost#community) to keep up-to-date and meet other Ghosters.
-
-## Getting Started
-
-There are a few different ways to install Ghost, take care to use the method which best suits your needs.
-
-**Please note** - the downloadable zip files we provide on [Ghost.org](http://ghost.org/download), the [GitHub releases page](https://github.com/TryGhost/Ghost/releases), and via npm are pre-built packages designed for getting setup quickly. Cloning from the git repository requires you to install several dependencies and build the assets yourself. 
-
-### Install from zip (fastest & best for bloggers)
-
-If you just want to get a Ghost blog running in the fastest time possible, this method is for you.
-
-For detailed instructions for various platforms visit the [Ghost Installation Guide](http://support.ghost.org/installation/). If you get stuck, help is available on [our support site](http://support.ghost.org/).
-
-1. Install [Node.js](http://nodejs.org) - Ghost requires **Node v0.10.x**
-1. Download the latest Ghost package from [Ghost.org](http://ghost.org/download). 
-1. Create a new directory where you would like to run the code, and un-zip the package to that location.
-1. Fire up a Terminal, the Node Command Prompt or shell and change directory to the root of the Ghost application (where config.example.js and index.js are)
-1. run `npm install --production` to install the node dependencies. If you see `error Error: ENOENT` on this step, make sure you are in the project directory and try again.
-1. To start ghost, run `npm start`
-1. Visit `http://localhost:2368/` in your web browser or go to `http://localhost:2368/ghost` to log in
-
-Check out the [Documentation](http://support.ghost.org/) for more detailed instructions, or get in touch via the [forum](http://ghost.org/forum) if you get stuck.
+- [Ghost 官网（英文）](https://ghost.org) & [Ghost 中国](http://www.ghostchina.com/)
+- [最新版本（英文）](https://ghost.org/download/) & [最新版本（中文）](http://www.ghostchina.com/download/)
+- [技术支持（英文）](http://support.ghost.org/) & [问答社区（中文）](http://wenda.ghostchina.com/)
+- [主题文档](http://themes.ghost.org)
+- [贡献指南](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md)
+- [心愿列表](http://ideas.ghost.org/)
+- [技术博客](http://dev.ghost.org)
 
 
+# 快速安装
 
-### Install from git
+安装前请确保已经安装了 Node.js - 我们建议使用 **Node v0.10.x** 的最新版本。
 
-If you're a developer or someone comfortable getting up and running from a `git clone`, this method is for you.
+Ghost 同时还支持 **Node v0.12** 和 **io.js v1.2**，但是这些版本可能会导致安装失败，请自行斟酌。获取帮助请到 [论坛](https://ghost.org/forum/installation/)。
 
-If you clone the GitHub repository, you will need to build a number of assets using grunt.
+1. 下载 [最新版本](https://ghost.org/download/) 的 Ghost
+1. 解压文件至你所希望的安装位置
+1. 启动一个命令行窗口
+1. 执行 `npm install --production` 命令
+1. 启动 Ghost
+    - 本地环境：`npm start`
+    - 生产环境：`npm start --production`
+1. 启动浏览器，打开 `http://localhost:2368/ghost` 链接
 
-Please do **NOT** use the master branch of Ghost in production. If you are using git to deploy to production, please use the latest [release](https://github.com/TryGhost/Ghost/releases) or the [stable](https://github.com/TryGhost/Ghost/tree/stable) branch which contains the latest release.
+还可以参考详细的 [安装指南](http://support.ghost.org/installation/) 。
 
-#### Quickstart:
+# 安装中文版
 
-1. `npm install -g grunt-cli`
-1. `npm install`
-1. `grunt init` (and `grunt prod` if you want to run Ghost in production mode)
-1. `npm start`
+Node.js 是必须的，同样也是建议使用  **Node v0.10.x** 的最新版本。如果你使用的是 **Node v0.12** 或 **io.js v1.2** 版本，请小心！遇到问题可以到 [问答社区](http://wenda.ghostchina.com/) 讨论。
 
-Full instructions & troubleshooting tips can be found in the [Contributing Guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md) under the heading "[Working on Ghost Core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#working-on-ghost-core)".
+1. 下载[最新的 Ghost 中文版](http://www.ghostchina.com/download/) 。建议下载**集成安装包**，大概20M左右。
+1. 解压所有文件到你所希望的安装目录
+1. 启动一个命令行窗口
+1. 如果你下载的不是**集成安装包**（也就是没有 `node_modules` 目录），清闲执行 `npm install --production` 命令
+1. 启动 Ghost
+    - 本地环境：`npm start`
+    - 生产环境：`npm start --production`
+1. 启动浏览器，打开 `http://localhost:2368/ghost` 链接
 
-Check out the [Documentation](http://support.ghost.org/) for more detailed instructions, or get in touch via the [forum](http://ghost.org/forum) if you get stuck.
+<a name="getting-started"></a>
+# 开发者(从 git 下载 Ghost)
 
-### Install from npm
+> 一般用户不建议这种方式！
 
-If you want to build Ghost into a larger node app, or are familiar with using `npm` packages, then this method might be for you.
+安装 Node.js。
 
-`npm install ghost`
+```bash
+# Node v0.10.x - 完全支持
+# Node v0.12.x and io.js v1.2 - 部分支持
+#
+# 自行斟酌吧
+```
 
-Further setup instructions can be found in the [using Ghost as a NPM module](https://github.com/TryGhost/Ghost/wiki/Using-Ghost-as-an-NPM-module) wiki entry.
+克隆 ghost:
+
+```bash
+git clone git://github.com/tryghost/ghost.git
+cd ghost
+```
+
+安装 grunt。
+
+```bash
+npm install -g grunt-cli
+```
+
+安装 Ghost。 如果你是在本地环境运行 ghost，可以使用 [master](https://github.com/TryGhost/Ghost/tree/master) 分支。如果是在生产环境运行，请使用 [stable](https://github.com/TryGhost/Ghost/tree/stable) 分支。 :no_entry_sign::rocket::microscope:
+
+```bash
+npm install
+```
+
+编译！
+
+```bash
+grunt init
+```
+
+为生产环境压缩各种文件。
+
+```bash
+grunt prod
+```
+
+启动博客。
+
+```bash
+npm start
+
+##  让 Ghost 在生产环境中运行请添加 --production 参数
+```
+
+祝贺你，一切搞定了！顺便说一下，你还可以直接执行 `npm install ghost` 指令将 Ghost 作为 npm 包来使用。[将 Ghost 作为 NPM 模块来使用](https://github.com/TryGhost/Ghost/wiki/Using-Ghost-as-an-npm-module) 是一份很详尽的文档。
+
+还可以参考更详细的 [安装指南](http://support.ghost.org/installation/) 。
 
 
-### Upgrading to The Latest Version
+# 部署 Ghost
 
-Upgrade instructions can be found on the [Ghost Support Site](http://support.ghost.org/how-to-upgrade/)
+最简单的 Ghost 部署方案就是购买官方的 <strong><a href="https://ghost.org/pricing/">Ghost(Pro)</a></strong> 服务（托管在国外）。此服务所获得的收益都将用于支持 Ghost Foundation，这也是我们能够一直维护此项目的财政来源。
 
-### Logging in For The First Time
+另外，采用 Ghost 官方所提供的服务可以让你只需点几下鼠标就能完成 Ghost 部署，然后就可以开始享受你的创作时光了。
 
-Once you have the Ghost server up and running, you should be able to navigate to `http://localhost:2368/ghost/` from a web browser, where you will be prompted to setup your blog and user account. Once you have entered your desired credentials you will be automatically logged in to the admin area. The setup screen will not be accessible once the process has been completed.
+如果你希望自己部署 Ghost，可以参考[这里](http://support.ghost.org/deploying-ghost/)。
 
-
-## Community
-
-Keep track of Ghost development and Ghost community activity.
-
-* Follow Ghost on [Twitter](http://twitter.com/TryGhost), [Facebook](https://www.facebook.com/ghost) and [Google+](https://plus.google.com/114465948129362706086).
-* Read and subscribe to the [Official Ghost Blog](http://blog.ghost.org) and the [Ghost Development Blog](http://dev.ghost.org).
-* Join in discussions on the [Ghost Forum](http://ghost.org/forum/)
-* Chat with Ghost developers on IRC. We're on `irc.freenode.net`, in the `#Ghost` channel. We have a public meeting every Tuesday at 5:30pm London time.
+如果你使用的是**阿里云主机**，还可以参考我们撰写的[系列文章](http://www.ghostchina.com/tag/aliyun-ecs/)，按照文中指引一步步安装 Ghost 以及依赖的各个组件。
 
 
-## Versioning
+# 保持更新
 
-For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Ghost will be maintained according to the [Semantic Versioning](http://semver.org/) guidelines as much as possible.
+当 Ghost 有新版本发布时，请参考 [升级指南](http://support.ghost.org/how-to-upgrade/) 以了解如何升级 Ghost。
 
-Releases will be numbered with the following format:
+你可以在 [我们的论坛（英文）](https://ghost.org/forum) & [问答社区（中文）](http://wenda.ghostchina.com/) 和其他 Ghost 用户交流，或者在 [public Slack team](https://ghost.org/slack/) 与 Ghost 开发者沟通。我们每周二下午 5:30 都会在 Slack 上开碰头会。请注意，我们说的是`伦敦时间`。
 
-`<major>.<minor>.<patch>-<build>`
+每次有新版本都会在 [技术博客](http://dev.ghost.org/tag/releases/) 上公布。你可以通过邮件订阅或者在 Twitter 上关注 [@TryGhost_Dev](https://twitter.com/tryghost_dev)。
 
-Constructed with the following guidelines:
-
-* A new *major* release indicates a large change where backwards compatibility is broken.
-* A new *minor* release indicates a normal change that maintains backwards compatibility.
-* A new *patch* release indicates a bugfix or small change which does not affect compatibility.
-* A new *build* release indicates this is a pre-release of the version.
+:saxophone::turtle:
 
 
-## Copyright & License
+# 版权 & 协议
 
-Copyright (c) 2013-2014 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2015 Ghost Foundation - Released under the [MIT license](LICENSE).

@@ -8,13 +8,14 @@
 
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        <a class="back-button icon-arrow-left" href="{{@blog.url}}">首页</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">订阅</a>
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">菜单</span></a>
+        {{/if}}
     </nav>
 </header>
 
 <main class="content" role="main">
-
     <article class="{{post_class}}">
 
         <header class="post-header">
@@ -35,7 +36,7 @@
 
             {{#if image}}
             <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}的头像</span></a>
             </figure>
             {{/if}}
 
@@ -62,23 +63,29 @@
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                 {{! 百度分享代码结束}}
             </section>
-	    <!-- duoshuo comment -->
-	    <section class="post-comments">  
-	    <div class="ds-thread" data-thread-key="{{slug}}" data-title="{{{title}}}" data-url="{{url absolute="true"}}"></div>
-	    </section> 
+
         </footer>
+
     </article>
 </main>
-{{/post}}
 
-<script type="text/javascript">
-	var duoshuoQuery = {short_name:"lichenfan"};
-	(function() {
-	 var ds = document.createElement('script');
-	 ds.type = 'text/javascript';ds.async = true;
-	 ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	 ds.charset = 'UTF-8';
-	 (document.getElementsByTagName('head')[0] 
-	  || document.getElementsByTagName('body')[0]).appendChild(ds);
-	 })();
-</script>
+<aside class="read-next">
+    {{#next_post}}
+    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/next_post}}
+    {{#prev_post}}
+    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/prev_post}}
+</aside>
+
+{{/post}}
